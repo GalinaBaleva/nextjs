@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76e80d2c-9d6a-4bc9-96c4-d2a7be9da3b3" name="Changes" comment="Initialize custom fonts">
-      <change beforePath="$PROJECT_DIR$/app/(root)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(root)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    <list default="true" id="74321d83-c1cf-46eb-88d5-554ca714fe13" name="Changes" comment="Add corrections.">
+      <change afterPath="$PROJECT_DIR$/app/components/Footer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +14,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="KEEP" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -32,16 +28,11 @@
     "accountId": "d9fcd8fa-4284-4d75-9f6d-2fe2618fd225"
   }
 }]]></component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="34KqWQZv0IVP3J5n85MB4Esc1xp" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="34bis4UmEgtn8UjFYUqj76FWIBx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -51,10 +42,12 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/balev/OneDrive/Desktop/GitHub/nextjs/public",
+    "last_opened_file_path": "C:/Users/balev/OneDrive/Desktop/GitHub/nextjs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,15 +59,24 @@
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\balev\OneDrive\Desktop\GitHub\nextjs\public" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\balev\OneDrive\Desktop\GitHub\nextjs" />
-      <recent name="C:\Users\balev\OneDrive\Desktop\GitHub\nextjs\app" />
-      <recent name="C:\Users\balev\OneDrive\Desktop\GitHub\nextjs\app\(root)" />
-      <recent name="C:\Users\balev\OneDrive\Desktop\GitHub\nextjs\api" />
-    </key>
+  </component>
+  <component name="RunManager" selected="npm.Next.js: server-side">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -85,48 +87,49 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="76e80d2c-9d6a-4bc9-96c4-d2a7be9da3b3" name="Changes" comment="" />
-      <created>1760972641902</created>
+      <changelist id="74321d83-c1cf-46eb-88d5-554ca714fe13" name="Changes" comment="" />
+      <created>1761488890646</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1760972641902</updated>
-      <workItem from="1760972643343" duration="1469000" />
-      <workItem from="1760974436745" duration="29563000" />
+      <updated>1761488890646</updated>
+      <workItem from="1761488892586" duration="62000" />
+      <workItem from="1761488959110" duration="2679000" />
     </task>
-    <task id="LOCAL-00001" summary="Initialized the Nex.js project.">
+    <task id="LOCAL-00001" summary="Add corrections.">
       <option name="closed" value="true" />
-      <created>1761082598844</created>
+      <created>1761512168040</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1761082598844</updated>
+      <updated>1761512168040</updated>
     </task>
-    <task id="LOCAL-00002" summary="Add Navbar and GitHub - Authorizing OAuth Apps">
+    <task id="LOCAL-00002" summary="Add corrections.">
       <option name="closed" value="true" />
-      <created>1761123080356</created>
+      <created>1761512641693</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1761123080356</updated>
+      <updated>1761512641693</updated>
     </task>
-    <task id="LOCAL-00003" summary="Initialize custom fonts">
-      <option name="closed" value="true" />
-      <created>1761127155256</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1761127155256</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initialized the Nex.js project." />
-    <MESSAGE value="Add Navbar and GitHub - Authorizing OAuth Apps" />
-    <MESSAGE value="Initialize custom fonts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialize custom fonts" />
+    <MESSAGE value="Add corrections." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add corrections." />
   </component>
 </project>
