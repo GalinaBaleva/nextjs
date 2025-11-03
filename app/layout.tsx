@@ -1,54 +1,21 @@
 import type {Metadata} from "next";
+import {Schibsted_Grotesk, Martian_Mono} from "next/font/google";
 import "./globals.css";
-import localFont from "next/font/local";
-import Navbar from "@/app/components/Navbar";
+import LightRays from "@/components/LightRays";
 
-const workSans = localFont({
-    src: [
-        {
-            path: './fonts/WorkSans-Regular.ttf',
-            weight: '900',
-            style: 'normal'
-        }, {
-            path: './fonts/WorkSans-ExtraBold.ttf',
-            weight: '800',
-            style: 'normal'
-        }, {
-            path: './fonts/WorkSans-Bold.ttf',
-            weight: '700',
-            style: 'normal'
-        }, {
-            path: './fonts/WorkSans-SemiBold.ttf',
-            weight: '600',
-            style: 'normal'
-        }, {
-            path: './fonts/WorkSans-Medium.ttf',
-            weight: '500',
-            style: 'normal'
-        }, {
-            path: './fonts/WorkSans-Regular.ttf',
-            weight: '400',
-            style: 'normal'
-        }, {
-            path: './fonts/WorkSans-Black.ttf',
-            weight: '300',
-            style: 'normal'
-        }, {
-            path: './fonts/WorkSans-Thin.ttf',
-            weight: '200',
-            style: 'normal'
-        }, {
-            path: './fonts/WorkSans-ExtraLight.ttf',
-            weight: '100',
-            style: 'normal'
-        },
-    ],
-    variable: '--font-work-sans',
+const schibstedGrotesk = Schibsted_Grotesk({
+    variable: "--font-schibsted-grotesk",
+    subsets: ["latin"],
+});
+
+const martianMono = Martian_Mono({
+    variable: "--font-martian-mono",
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-    title: "YC Directory",
-    description: "Pitch, Vote and Grow",
+    title: "DevEvent",
+    description: "The Hub for Event You Mustn't Miss!",
 };
 
 export default function RootLayout({
@@ -59,10 +26,25 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body
-            className={workSans.variable}
+            className={`${schibstedGrotesk.variable} ${martianMono.variable} min-h-screen antialiased`}
         >
-        <Navbar/>
-        {children}
+        <div className="absolute inset-0 top-0 z-[-1] min-h-screen">
+            <LightRays
+                raysOrigin="top-center-offset"
+                raysColor="#5dfeca"
+                raysSpeed={0.5}
+                lightSpread={0.9}
+                rayLength={1.4}
+                followMouse={true}
+                mouseInfluence={0.2}
+                noiseAmount={0.0}
+                distortion={0.01}
+                className="custom-rays"
+            />
+        </div>
+        <main>
+            {children}
+        </main>
         </body>
         </html>
     );
