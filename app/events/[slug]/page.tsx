@@ -33,9 +33,9 @@ const EventTag = ({ tag }: { tag: string[] }) => (
     </div>
 )
 
-const EventDetailPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+const EventDetailPage = async ({ params }: { params: { slug: string } }) => {
 
-    const { slug } = await params;
+    const { slug } = params;
 
     let event;
 

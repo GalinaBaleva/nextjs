@@ -1,7 +1,7 @@
-import { Schema, model, models, Document } from 'mongoose';
+import { Schema, model, models, HydratedDocument, Types } from "mongoose";
 
-// TypeScript interface for Event document
-export interface IEvent extends Document {
+export interface IEvent {
+  _id: Types.ObjectId;        
   title: string;
   slug: string;
   description: string;
@@ -11,7 +11,7 @@ export interface IEvent extends Document {
   location: string;
   date: string;
   time: string;
-  mode: string;
+  mode: "online" | "offline" | "hybrid";
   audience: string;
   agenda: string[];
   organizer: string;
@@ -19,6 +19,10 @@ export interface IEvent extends Document {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export type IEventDocument = HydratedDocument<IEvent>;
+
+
 
 const EventSchema = new Schema<IEvent>(
   {
@@ -110,26 +114,24 @@ const EventSchema = new Schema<IEvent>(
 );
 
 // Pre-save hook for slug generation and data normalization
-EventSchema.pre('save', function (next) {
-  const event = this as IEvent;
+EventSchema.pre("save", function (next) {
+  const event = this as IEventDocument;
 
-  // Generate slug only if title changed or document is new
-  if (event.isModified('title') || event.isNew) {
+  if (event.isModified("title") || event.isNew) {
     event.slug = generateSlug(event.title);
   }
 
-  // Normalize date to ISO format if it's not already
-  if (event.isModified('date')) {
+  if (event.isModified("date")) {
     event.date = normalizeDate(event.date);
   }
 
-  // Normalize time format (HH:MM)
-  if (event.isModified('time')) {
+  if (event.isModified("time")) {
     event.time = normalizeTime(event.time);
   }
 
   next();
 });
+
 
 // Helper function to generate URL-friendly slug
 function generateSlug(title: string): string {
@@ -181,6 +183,5 @@ function normalizeTime(timeString: string): string {
 // Create compound index for common queries
 EventSchema.index({ date: 1, mode: 1 });
 
-const Event = models.Event || model<IEvent>('Event', EventSchema);
-
+const Event = models.Event || model<IEvent>("Event", EventSchema);
 export default Event;
