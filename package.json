@@ -1,9 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "nextjs",
-  "version": "0.1.0",
-  "private": true,
-=======
   "name": "y",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +10,6 @@
   "directories": {
     "lib": "lib"
   },
->>>>>>> 976eaec (Add small corrections)
   "scripts": {
     "dev": "next dev",
     "build": "next build",
