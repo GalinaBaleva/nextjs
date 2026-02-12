@@ -59,7 +59,9 @@ const EventDetailPage = async ({ params }: { params: Promise<{ slug: string }> }
         return notFound();
     }
 
+
     const { description, image, overview, date, time, location, mode, agenda, audience, tags, organizer } = event;
+
 
     return (
         <section id="event">
@@ -86,14 +88,14 @@ const EventDetailPage = async ({ params }: { params: Promise<{ slug: string }> }
                         <EventDetailItem icon="/icons/audience.svg" alt="audience" label={audience} />
                     </section>
 
-                    <EventAgenda agendaItems={JSON.parse(agenda[0])} />
+                    <EventAgenda agendaItems={agenda} />
 
                     <section className="flex-col-gap-2">
                         <h2>Organizer</h2>
                         <p>{organizer}</p>
                     </section>
 
-                    <EventTag tag={JSON.parse(tags[0])} />
+                    <EventTag tag={tags} />
                 </div>
 
                 {/* Right Side - Booking Form */}

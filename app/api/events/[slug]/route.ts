@@ -15,8 +15,8 @@ interface RouteParams {
  */
 export async function GET(
   request: NextRequest,
-  { params }: RouteParams
-): Promise<NextResponse> {
+  { params }: { params: Promise<{ slug: string }> }
+) {
   try {
     // Extract and validate slug parameter
     const { slug } =  await params;
