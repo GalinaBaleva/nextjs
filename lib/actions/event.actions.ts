@@ -8,3 +8,9 @@ export async function getEvents(): Promise<IEvent[]> {
   await connectDB();
   return Event.find().sort({ createdAt: -1 }).lean<IEvent[]>();
 }
+
+
+export async function getEventBySlug(slug: string): Promise<IEvent | null> {
+  await connectDB();
+  return Event.findOne({ slug }).lean<IEvent>();
+}

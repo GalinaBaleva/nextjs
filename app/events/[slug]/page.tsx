@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";    
+import { getEventBySlug } from "@/lib/actions/event.actions";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
@@ -33,35 +34,10 @@ const EventDetailPage = async ({ params }: { params: Promise<{ slug: string }> }
 
     const { slug } = await params;
 
-    let event;
+    const event = await getEventBySlug(slug);
+    if(!event) return notFound();
 
-    try {
-        const request = await fetch(`${BASE_URL}/api/events/${slug}`,
-            {
-                next: { revalidate: 60 }
-            });
-
-        if (!request.ok) {
-            if (request.status === 404) {
-                return notFound();
-            }
-
-            throw new Error('Failed to fetch event data: ' + request.statusText);
-        }
-
-        const response = await request.json();
-        event = response.event;
-
-        if (!event) return notFound();
-
-    } catch (error) {
-        console.error('Error fetching event data:', error);
-        return notFound();
-    }
-
-
-    const { description, image, overview, date, time, location, mode, agenda, audience, tags, organizer } = event;
-
+   const { description, image, overview, date, time, location, mode, agenda, audience, tags, organizer } = event;
 
     return (
         <section id="event">
