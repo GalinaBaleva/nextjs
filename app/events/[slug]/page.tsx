@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { notFound } from "next/navigation";    
-import { getEventBySlug } from "@/lib/actions/event.actions";
-
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+import { notFound } from "next/navigation";
+import { getEventBySlug, getSimilarEvents } from "@/lib/actions/event.actions";
+import BookingEvent from "@/components/BookEvent";
+import { IEvent } from "@/database";
+import EventCard from "@/components/EventCard";
 
 const EventDetailItem = ({ icon, alt, label }: { icon: string; alt: string; label: string }) => (
     <div className="flex-row-gap-2 items-center">
@@ -35,9 +36,12 @@ const EventDetailPage = async ({ params }: { params: Promise<{ slug: string }> }
     const { slug } = await params;
 
     const event = await getEventBySlug(slug);
-    if(!event) return notFound();
+    if (!event) return notFound();
 
-   const { description, image, overview, date, time, location, mode, agenda, audience, tags, organizer } = event;
+    const { description, image, overview, date, time, location, mode, agenda, audience, tags, organizer } = event;
+
+    const bookings = 10;
+    const similarEvents: IEvent[] = await getSimilarEvents(slug);
 
     return (
         <section id="event">
@@ -76,8 +80,26 @@ const EventDetailPage = async ({ params }: { params: Promise<{ slug: string }> }
 
                 {/* Right Side - Booking Form */}
                 <aside className="booking">
-                    <p className="text-lg font-semibold">Book Event</p>
+                    <div className="signup-card">
+                        <h2>Book Your Spot</h2>
+                        {bookings > 0 ? (
+                            <p className="text-sm">Join {bookings} people who have already booked their spot!</p>
+                        ) : (
+                            <p className="text-sm">Be the first to book your spot!</p>
+                        )}
+
+                        <BookingEvent />
+                    </div>
                 </aside>
+            </div>
+            
+            <div className="flex w-full flex-col gap-4 pt-20">
+                <h2>Similar Events</h2>
+                <div className="flex">
+                    {similarEvents.length > 0 && similarEvents.map((similarEvent: IEvent) => (
+                        <EventCard key={similarEvent.id} {...similarEvent} />
+                    ))}
+                </div>
             </div>
         </section>
     );

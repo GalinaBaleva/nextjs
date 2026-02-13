@@ -2,13 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import { Event } from '@/database';
 
-// Define the route params type
-interface RouteParams {
-  params: {
-    slug: string;
-  };
-}
-
 /**
  * GET /api/events/[slug]
  * Fetches a single event by its slug

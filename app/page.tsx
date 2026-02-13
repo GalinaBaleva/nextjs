@@ -4,7 +4,6 @@ import EventCard from "@/components/EventCard";
 import {IEvent} from "@/database/event.model";
 import { getEvents } from "@/lib/actions/event.actions";
 
-// const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 const Page = async () => {
 
      const events = await getEvents();
@@ -18,7 +17,7 @@ const Page = async () => {
             <div className="mt-20 space-y-7">
                 <h3>Featured Events</h3>
 
-                <ul className="events">
+                <ul className="events list-none">
                     {events && events.length > 0 && events.map((event: IEvent) => (
                         <li key={event.title}>
                             <EventCard {...event} />
